@@ -21,7 +21,7 @@ exports.getMusic = async (req, res, next) => {
   }
 };
 
-// * Getting all musics
+// * Getting random musics
 exports.getMusics = async (req, res, next) => {
   try {
     // const musics = await Music.find();
@@ -38,6 +38,31 @@ exports.getMusics = async (req, res, next) => {
       results: musics.length,
       data: {
         musics,
+      },
+    });
+  } catch (e) {
+    next(e);
+  }
+};
+
+// * Getting all musics
+exports.getAllMusics = async (req, res, next) => {
+  try {
+    const musics = await Music.find();
+
+    const aggregate = await Music.aggregate([
+      {
+        $sample: {
+          size: musics.length,
+        },
+      },
+    ]);
+
+    res.status(200).json({
+      status: "success",
+      results: musics.length,
+      data: {
+        musics: aggregate,
       },
     });
   } catch (e) {

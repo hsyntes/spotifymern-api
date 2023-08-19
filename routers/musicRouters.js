@@ -6,13 +6,15 @@ const {
   getMusicsByCategory,
   searchMusics,
   getCategories,
+  getAllMusics,
 } = require("../controllers/musicController");
 
 const router = express.Router();
 
 router.get("/", getMusics);
-router.get("/:id", getMusic);
-router.get("/categories/all", getCategories);
+router.get("/all", getAllMusics);
+// router.get("/id/:id", getMusic);
+router.get("/categories", getCategories);
 router.get("/category/:category", getMusicsByCategory);
 router.get("/search/:name", searchMusics);
 
