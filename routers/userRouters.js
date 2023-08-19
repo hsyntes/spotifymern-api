@@ -16,6 +16,9 @@ router.post("/login", login);
 router.get("/", getUsers);
 router.get("/:userId", getUser);
 
-router.get("/current-user", verifyToken, getCurrentUser);
+// * Protect after this
+router.use(verifyToken);
+
+router.get("/authorization/current-user", getCurrentUser);
 
 module.exports = router;
