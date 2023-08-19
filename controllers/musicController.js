@@ -45,6 +45,32 @@ exports.getMusics = async (req, res, next) => {
   }
 };
 
+// * Groupping musics by categories
+exports.getCategories = async (req, res, next) => {
+  try {
+    const categories = await Music.aggregate([
+      {
+        $unwind: "$categories",
+      },
+      {
+        $group: {
+          _id: "$categories",
+        },
+      },
+    ]);
+
+    res.status(200).json({
+      status: "success",
+      results: categories.length,
+      data: {
+        categories,
+      },
+    });
+  } catch (e) {
+    next(e);
+  }
+};
+
 // * Getting musics by category
 exports.getMusicsByCategory = async (req, res, next) => {
   try {
