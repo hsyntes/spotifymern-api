@@ -81,12 +81,12 @@ exports.getMusicsByCategory = async (req, res, next) => {
 
     const { category } = req.params;
 
-    const music = await Music.find({ categories: category });
+    const musics = await Music.find({ categories: category });
 
     res.status(200).json({
       status: "success",
       data: {
-        music,
+        musics,
       },
     });
   } catch (e) {
