@@ -28,7 +28,7 @@ exports.getMusics = async (req, res, next) => {
     const musics = await Music.aggregate([
       {
         $sample: {
-          size: 20,
+          size: 8,
         },
       },
     ]);
