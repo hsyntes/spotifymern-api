@@ -20,7 +20,7 @@ const musicSchema = new mongoose.Schema(
       {
         type: [String],
         enum: {
-          values: ["rap", "pop", "techno"],
+          values: ["rap", "pop", "hiphop"],
           message: "The category type is required.",
           default: "Standart",
         },
