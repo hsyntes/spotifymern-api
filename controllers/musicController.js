@@ -4,7 +4,8 @@ const Music = require("../models/Music");
 // * Geting the music by id
 exports.getMusic = async (req, res, next) => {
   try {
-    if (!req.params.id) return next("...");
+    if (!req.params.id)
+      return next(new ErrorProvider(403, "fail", "Please specify an ID."));
 
     const { id } = req.params;
 
