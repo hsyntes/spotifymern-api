@@ -1,4 +1,4 @@
-# SpotifyMERN Backend API
+# SpotifyMERN Backend API Documentation
 
 [![SpotifyMERN](https://spotifymern.s3.us-east-2.amazonaws.com/logo.svg)](https://spotifymern.vercel.app/)
 
