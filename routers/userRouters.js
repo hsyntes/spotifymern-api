@@ -13,9 +13,6 @@ const router = express.Router();
 router.post("/signup", signup);
 router.post("/login", login);
 
-router.get("/", getUsers);
-router.get("/:userId", getUser);
-
 // * Protect after this
 router.use(verifyToken);
 
