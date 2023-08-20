@@ -37,9 +37,9 @@ The InstaMERN backend leverages **AWS Cloud Services** for various functionaliti
 - Restrict/protect some features by secure token
 - Dedicate environments to **development** and **production**
 
-## Base URL
+## Frontend
 
-The base URL for the backend API is \***\*\*\*\*\***\*\*\*\*\***\*\*\*\*\***. All endpoints are relative to this base URL.
+Please visit here to see the frontend code: (https://github.com/hsyntes/spotifymern)
 
 ## Authentication
 
