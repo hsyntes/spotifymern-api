@@ -49,6 +49,11 @@ app.use(helmet());
 app.use(hpp());
 app.use(xss());
 
+// * Root Route
+app.get("/", (req, res) => {
+  res.send("Welcome to the SpotifyMERN API!");
+});
+
 // * Routers
 app.use("/spotifymern/users", userRouters);
 app.use("/spotifymern/musics", musicRouters);
