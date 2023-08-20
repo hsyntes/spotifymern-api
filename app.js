@@ -17,7 +17,7 @@ const app = express();
 // * Cors configuration
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://spotify-mern.netlify.app",
+  "https://spotifymern.vercel.app",
 ];
 
 app.use(
