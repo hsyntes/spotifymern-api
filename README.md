@@ -1,7 +1,5 @@
 # SpotifyMERN Backend API
 
-This project is under development.
-
 [![SpotifyMERN](https://spotifymern.s3.us-east-2.amazonaws.com/logo.svg)](https://spotifymern.vercel.app/)
 
 The SpotifyMERN backend API powers the SpotifyMERN application, a full-stack music streaming platform similar to Spotfy. This API allows users to listening their favorite musics, creating playlists & AWS Cloud Computing for storage & sending emals and more.
