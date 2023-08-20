@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const compression = require("compression");
 const expressRateLimit = require("express-rate-limit");
 const expressMongoSanitize = require("express-mongo-sanitize");
 const helmet = require("helmet");
@@ -28,6 +29,9 @@ app.use(
     credentials: true,
   })
 );
+
+// * Compression for production
+app.use(compression());
 
 // * API Limit
 const limit = expressRateLimit({
