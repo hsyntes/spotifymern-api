@@ -119,6 +119,29 @@ exports.getMusicsByCategory = async (req, res, next) => {
   }
 };
 
+// * Getting recommended for today
+exports.getRecommendedMusics = async (req, res, next) => {
+  try {
+    const musics = await Music.aggregate([
+      {
+        $sample: {
+          size: 5,
+        },
+      },
+    ]);
+
+    res.status(200).json({
+      status: "success",
+      results: musics.length,
+      data: {
+        musics,
+      },
+    });
+  } catch (e) {
+    next(e);
+  }
+};
+
 // * Searching musics
 exports.searchMusics = async (req, res, next) => {
   try {
@@ -129,12 +152,18 @@ exports.searchMusics = async (req, res, next) => {
 
     const { name } = req.params;
 
-    const musics = await Music.find({
+    const musics_1 = await Music.find({
       name: { $regex: name, $options: "i" },
     });
 
-    if (!musics.length)
+    const musics_2 = await Music.find({
+      singer: { $regex: name, $options: "i" },
+    });
+
+    if (!musics_1.length && !musics_2)
       return next(new ErrorProvider(404, "fail", "Not found any musics."));
+
+    const musics = [...new Set([...musics_1, ...musics_2])];
 
     res.status(200).json({
       status: "success",
