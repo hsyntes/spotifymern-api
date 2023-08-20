@@ -98,7 +98,7 @@ exports.verifyToken = async (req, res, next) => {
       );
 
     const decoded = jsonwebtoken.verify(token, process.env.JWT_SECRET);
-    const user = User.findById(decoded.id);
+    const user = await User.findById(decoded.id);
 
     if (!user)
       return next(
