@@ -39,7 +39,7 @@ The InstaMERN backend leverages **AWS Cloud Services** for various functionaliti
 
 ## Frontend
 
-Please visit here to see the frontend code: (https://github.com/hsyntes/spotifymern)
+Please visit here to see the frontend code: [SpotifyMERN - Fronted](https://github.com/hsyntes/spotifymern)
 
 ## Authentication
 
