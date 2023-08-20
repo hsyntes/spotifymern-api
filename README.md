@@ -41,7 +41,9 @@ The InstaMERN backend leverages **AWS Cloud Services** for various functionaliti
 
 Please visit here to see the frontend code: [SpotifyMERN - Fronted](https://github.com/hsyntes/spotifymern)
 
-[![SpotifyMERN](https://spotifymern.s3.us-east-2.amazonaws.com/screenshots/spotifymern-mobile-dark.png)](https://github.com/hsyntes)[![SpotifyMERN](https://spotifymern.s3.us-east-2.amazonaws.com/screenshots/spotifymern-mobile-light.png)](https://github.com/hsyntes)
+[![SpotifyMERN](https://spotifymern.s3.us-east-2.amazonaws.com/screenshots/spotifymern-mobile-dark.png)](https://github.com/hsyntes)
+
+[![SpotifyMERN](https://spotifymern.s3.us-east-2.amazonaws.com/screenshots/spotifymern-mobile-light.png)](https://github.com/hsyntes)
 
 ## Authentication
 
