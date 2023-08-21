@@ -153,18 +153,12 @@ exports.searchMusics = async (req, res, next) => {
 
     const { name } = req.params;
 
-    const musics_1 = await Music.find({
-      name: { $regex: name, $options: "i" },
+    const musics = await Music.find({
+      $or: [
+        { name: { $regex: name, $options: "i" } },
+        { singer: { $regex: name, $options: "i" } },
+      ],
     });
-
-    const musics_2 = await Music.find({
-      singer: { $regex: name, $options: "i" },
-    });
-
-    if (!musics_1.length && !musics_2)
-      return next(new ErrorProvider(404, "fail", "Not found any musics."));
-
-    const musics = [...new Set([...musics_1, ...musics_2])];
 
     res.status(200).json({
       status: "success",

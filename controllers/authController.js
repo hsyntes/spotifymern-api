@@ -1,3 +1,4 @@
+const Email = require("../classes/Email");
 const ErrorProvider = require("../classes/ErrorProvider");
 const User = require("../models/User");
 const jsonwebtoken = require("jsonwebtoken");
@@ -41,6 +42,12 @@ exports.signup = async (req, res, next) => {
       password: req.body.password,
       passwordConfirm: req.body.passwordConfirm,
     });
+
+    try {
+      await new Email(user, "https://spotifymern.vercel.app").sendWelcome();
+    } catch (e) {
+      console.error(`Email was not send: ${e}`);
+    }
 
     sendToken(res, 201, user, "You've signed up successfully.");
   } catch (e) {
