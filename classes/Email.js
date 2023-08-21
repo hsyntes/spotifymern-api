@@ -14,7 +14,6 @@ module.exports = class Email {
   createTransport() {
     if (process.env.NODE_ENV === "production")
       return nodemailer.createTransport({
-        // SES: { ses: new AWS.SES(), aws: AWS },
         host: process.env.AWS_SMTP_HOST,
         port: process.env.AWS_SMTP_PORT,
         auth: {
