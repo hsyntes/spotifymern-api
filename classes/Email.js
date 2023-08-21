@@ -53,7 +53,7 @@ module.exports = class Email {
 
   // * Sending emails for different scenerios
   async sendWelcome() {
-    await this.#send("Wellcome to InstaMERN", "We're glad to have you! 🥳");
+    await this.#send("Wellcome to SpotifyMERN", "We're glad to have you! 🥳");
   }
 
   async sendResetPassword() {
