@@ -4,7 +4,7 @@ const { JsonWebTokenError, TokenExpiredError } = require("jsonwebtoken");
 const uniqueError = (err) => {
   if (
     err.keyPattern.hasOwnProperty("username") ||
-    err.keyPattern.hasOwnProperty("emauil")
+    err.keyPattern.hasOwnProperty("email")
   )
     return new ErrorProvider(409, "fail", "This user already exists.");
 
