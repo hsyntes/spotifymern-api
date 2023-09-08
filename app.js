@@ -15,10 +15,7 @@ const errorController = require("./controllers/errorController");
 const app = express();
 
 // * Cors configuration
-const allowedOrigins = [
-  "http://localhost:3000",
-  "https://spotifymern.vercel.app",
-];
+const allowedOrigins = ["https://spotifymern.vercel.app"];
 
 app.use(
   cors({
